@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>AdminLTE 2 | Dashboard</title>
+    <title>@yield('title')</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.7 -->
@@ -36,25 +36,35 @@
     <![endif]-->
 
     <!-- Google Font -->
-    <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
+@yield('content')
 <div class="wrapper">
 
     <header class="main-header">
         <!-- Logo -->
-        <a href="index2.html" class="logo">
+        <a href="{{ route('index') }}" class="logo">
             <!-- mini logo for sidebar mini 50x50 pixels -->
-            <span class="logo-mini"><b>A</b>LT</span>
+
             <!-- logo for regular state and mobile devices -->
-            <span class="logo-lg"><b>Admin</b>LTE</span>
+            <span class="logo-lg"><b>Главная</b></span>
         </a>
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top">
+            <!-- Sidebar toggle button-->
+            <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                <span class="sr-only">Toggle navigation</span>
+            </a>
 
             <div class="navbar-custom-menu">
                 <ul class="nav navbar-nav">
+                    <!-- Messages: style can be found in dropdown.less-->
+
+                    <!-- Notifications: style can be found in dropdown.less -->
+
+                    <!-- Tasks: style can be found in dropdown.less -->
+
                     <!-- User Account: style can be found in dropdown.less -->
                     <li class="dropdown user user-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -97,7 +107,10 @@
                             </li>
                         </ul>
                     </li>
-
+                    <!-- Control Sidebar Toggle Button -->
+                    <li>
+                        <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -130,154 +143,53 @@
             <!-- sidebar menu: : style can be found in sidebar.less -->
             <ul class="sidebar-menu" data-widget="tree">
                 <li class="header">MAIN NAVIGATION</li>
-                <li class="active treeview">
+
+
+
+                <li class="treeview">
                     <a href="#">
-                        <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+                        <i class="fa fa-user"></i>
+                        <span>Пользователи</span>
                         <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
-                        <li><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
+                        <li><a href="pages/charts/chartjs.html"><i class="fa fa-circle-o"></i> Посмотреть всех</a></li>
+
                     </ul>
                 </li>
                 <li class="treeview">
                     <a href="#">
-                        <i class="fa fa-files-o"></i>
-                        <span>Layout Options</span>
-                        <span class="pull-right-container">
-              <span class="label label-primary pull-right">4</span>
-            </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li><a href="pages/layout/top-nav.html"><i class="fa fa-circle-o"></i> Top Navigation</a></li>
-                        <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o"></i> Boxed</a></li>
-                        <li><a href="pages/layout/fixed.html"><i class="fa fa-circle-o"></i> Fixed</a></li>
-                        <li><a href="pages/layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Collapsed
-                                Sidebar</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="pages/widgets.html">
-                        <i class="fa fa-th"></i> <span>Widgets</span>
-                        <span class="pull-right-container">
-              <small class="label pull-right bg-green">new</small>
-            </span>
-                    </a>
-                </li>
-                <li class="treeview">
-                    <a href="#">
-                        <i class="fa fa-pie-chart"></i>
-                        <span>Charts</span>
+                        <i class="fa fa-product-hunt"></i>
+                        <span>Товары</span>
                         <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="pages/charts/chartjs.html"><i class="fa fa-circle-o"></i> ChartJS</a></li>
-                        <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> Morris</a></li>
-                        <li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> Flot</a></li>
-                        <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li>
+                        <li><a href="pages/UI/general.html"><i class="fa fa-circle-o"></i> Посмотреть</a></li>
+
                     </ul>
                 </li>
                 <li class="treeview">
                     <a href="#">
-                        <i class="fa fa-laptop"></i>
-                        <span>UI Elements</span>
-                        <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li><a href="pages/UI/general.html"><i class="fa fa-circle-o"></i> General</a></li>
-                        <li><a href="pages/UI/icons.html"><i class="fa fa-circle-o"></i> Icons</a></li>
-                        <li><a href="pages/UI/buttons.html"><i class="fa fa-circle-o"></i> Buttons</a></li>
-                        <li><a href="pages/UI/sliders.html"><i class="fa fa-circle-o"></i> Sliders</a></li>
-                        <li><a href="pages/UI/timeline.html"><i class="fa fa-circle-o"></i> Timeline</a></li>
-                        <li><a href="pages/UI/modals.html"><i class="fa fa-circle-o"></i> Modals</a></li>
-                    </ul>
-                </li>
-                <li class="treeview">
-                    <a href="#">
-                        <i class="fa fa-edit"></i> <span>Forms</span>
+                        <i class="fa fa-edit"></i> <span>Другое</span>
                         <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
                     </a>
                     <ul class="treeview-menu">
                         <li><a href="pages/forms/general.html"><i class="fa fa-circle-o"></i> General Elements</a></li>
-                        <li><a href="pages/forms/advanced.html"><i class="fa fa-circle-o"></i> Advanced Elements</a>
-                        </li>
+                        <li><a href="pages/forms/advanced.html"><i class="fa fa-circle-o"></i> Advanced Elements</a></li>
                         <li><a href="pages/forms/editors.html"><i class="fa fa-circle-o"></i> Editors</a></li>
                     </ul>
                 </li>
-                <li class="treeview">
-                    <a href="#">
-                        <i class="fa fa-table"></i> <span>Tables</span>
-                        <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li><a href="pages/tables/simple.html"><i class="fa fa-circle-o"></i> Simple tables</a></li>
-                        <li><a href="pages/tables/data.html"><i class="fa fa-circle-o"></i> Data tables</a></li>
-                    </ul>
-                </li>
 
-                <li class="treeview">
-                    <a href="#">
-                        <i class="fa fa-folder"></i> <span>Examples</span>
-                        <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li><a href="pages/examples/invoice.html"><i class="fa fa-circle-o"></i> Invoice</a></li>
-                        <li><a href="pages/examples/profile.html"><i class="fa fa-circle-o"></i> Profile</a></li>
-                        <li><a href="pages/examples/login.html"><i class="fa fa-circle-o"></i> Login</a></li>
-                        <li><a href="pages/examples/register.html"><i class="fa fa-circle-o"></i> Register</a></li>
-                        <li><a href="pages/examples/lockscreen.html"><i class="fa fa-circle-o"></i> Lockscreen</a></li>
-                        <li><a href="pages/examples/404.html"><i class="fa fa-circle-o"></i> 404 Error</a></li>
-                        <li><a href="pages/examples/500.html"><i class="fa fa-circle-o"></i> 500 Error</a></li>
-                        <li><a href="pages/examples/blank.html"><i class="fa fa-circle-o"></i> Blank Page</a></li>
-                        <li><a href="pages/examples/pace.html"><i class="fa fa-circle-o"></i> Pace Page</a></li>
-                    </ul>
-                </li>
-                <li class="treeview">
-                    <a href="#">
-                        <i class="fa fa-share"></i> <span>Multilevel</span>
-                        <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
-                        <li class="treeview">
-                            <a href="#"><i class="fa fa-circle-o"></i> Level One
-                                <span class="pull-right-container">
-                  <i class="fa fa-angle-left pull-right"></i>
-                </span>
-                            </a>
-                            <ul class="treeview-menu">
-                                <li><a href="#"><i class="fa fa-circle-o"></i> Level Two</a></li>
-                                <li class="treeview">
-                                    <a href="#"><i class="fa fa-circle-o"></i> Level Two
-                                        <span class="pull-right-container">
-                      <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                                    </a>
-                                    <ul class="treeview-menu">
-                                        <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
-                                        <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
-                    </ul>
-                </li>
-                <li><a href="https://adminlte.io/docs"><i class="fa fa-book"></i> <span>Documentation</span></a></li>
+
+
+
+
             </ul>
         </section>
         <!-- /.sidebar -->
@@ -286,27 +198,122 @@
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
-        <section class="content-header">
-            <h1>
-                Dashboard
-                <small>Control panel</small>
-            </h1>
-            <ol class="breadcrumb">
-                <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                <li class="active">Dashboard</li>
-            </ol>
-        </section>
+        <div class="row">
+            <div class="col-sm-12">
+                <div style="margin: 30px">
+                    <h1>Товары</h1>
+
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <td>ID</td>
+                            <td>Фото</td>
+                            <td>Категория</td>
+                            <td>Описание</td>
+                            <td>Цена</td>
+                            <td>Редактировать</td>
+                            <td>Дата создания</td>
+                            <td>Дата редактирования</td>
+                            <td>Перейти</td>
+                            <td>Удалить</td>
+                        </tr>
+                        </thead>
+                        <tbody>
+@foreach ($products as $product)
+                        <tr>
+                            <td><a href="products//view_product"><img src="http://localhost/crud/public/products_images/ " width="40px"></a></td>
+                            <td></td>
+                            <td><h4></h4></td>
+                            <td><h4></h4></td>
+                            <td><h4></h4></td>
+
+                            <td>
+                                <a hidden href="products//update_product">
+                                    Редактировать
+                                </a>
+                            </td>
+                            <td><h4></h4></td>
+
+
+                            <td>
+                                <form hidden action="products//delete" method="POST">
+
+                                    <button class="btn btn-danger" type="submit" name="delete_product">Удалить</button>
+
+
+                                </form>
+                            </td>
+                        </tr>
+@endforeach
+                        </tbody>
+                    </table>
+
+
+                    <!-- Trigger the modal with a button -->
+                    <button  type="button" data-toggle="modal" data-target="#mymodal"
+                            class="btn btn-block btn-lg">
+                        Добавить
+                    </button>
+                    <!-- Modal -->
+
+
+                    <div class="modal fade" id="mymodal" role="dialog" aria-labelledby="myModalLabel"
+                         aria-hidden="true">
+
+                        <div class="modal-dialog">
+                            <!-- Modal content-->
+
+                            <div class="modal-content">
+
+                                <div class="modal-header">
+
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;
+                                    </button>
+                                    <h4 class="modal-title" id="myModalLabel">Добавить новый товар</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div style="margin-top: 20px" class="col-sm-6">
+
+
+                                        <form enctype="multipart/form-data" action="products/create" class="form-group"
+                                              method="post">
+
+                                            <p><input type="file" name="image" required></p>
+                                            <p><input minlength="2" maxlength="15" id="mw1" class="form-control" type="text" name="category" placeholder="Категория" required></p>
+                                            <p><input minlength="2" maxlength="15" id="mw1" class="form-control" type="text" name="description" placeholder="Описание" required></p>
+                                            <p><input minlength="2" maxlength="15" id="mw1" class="form-control" type="text" name="price" placeholder="Цена" required></p>
+
+
+
+                                            <button id="mw1" class="btn btn-primary" type="submit">Добавить</button>
+                                            <button id="mw1" type="button" class="btn btn-default" data-dismiss="modal">
+                                                Отмена
+                                            </button>
+
+                                        </form>
+
+                                    </div>
+                                    <div class="modal-footer">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <script>
+                        $(document).ready(function () {
+                            $("#mybtn").click(function () {
+                                $("#mymodal").modal();
+                            });
+                        });
+                    </script>
+
+                </div>
+            </div>
+        </div>
 
         <!-- Main content -->
-        <section class="content">
-            <!-- Small boxes (Stat box) -->
-            <div class="row">
-                @yield('content')
 
-            </div>
-            <!-- /.row -->
-
-        </section>
         <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
