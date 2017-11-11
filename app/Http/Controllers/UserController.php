@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Product;
+
+use App\User;
 use Illuminate\Http\Request;
 
-class ProductController extends Controller
+class UserController extends Controller
 {
 
 
@@ -18,8 +19,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::all();
-        return view('admin.product.index', compact('products'));
+        $users = User::all();
+        return view('admin.user.index', compact('users'));
     }
 
     /**
@@ -30,8 +31,8 @@ class ProductController extends Controller
     public function create()
     {
 
-        return view('admin.product.create');
 
+        return view('admin.user.create');
     }
 
     /**
@@ -42,9 +43,12 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        $product = new Product($request->all());
-        $product->save();
-        return redirect()->route('product.index');
+
+
+
+        $user = new User($request->all());
+        $user->save();
+        return redirect()->route('user.index');
     }
 
     /**
@@ -55,8 +59,8 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        $product = Product::find($id);
-        return view('admin.product.show',compact('product'));
+        $user = User::find($id);
+        return view('admin.user.show',compact('user'));
     }
 
     /**
@@ -67,8 +71,8 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        $product = Product::find($id);
-        return view('admin.product.edit',compact('product'));
+        $user = User::find($id);
+        return view('admin.user.edit',compact('user'));
     }
 
     /**
@@ -81,12 +85,14 @@ class ProductController extends Controller
     public function update(Request $request, $id)
     {
         request()->validate([
-            'title' => 'required',
-            'description' => 'required',
-            'price' => 'required',
+            'image_url' => 'required',
+            'name' => 'required',
+            'lastname' => 'required',
+            'email' => 'required',
+            'phone' => 'required',
         ]);
-        Product::find($id)->update($request->all());
-        return redirect()->route('product.index');
+        User::find($id)->update($request->all());
+        return redirect()->route('user.index');
     }
 
     /**
@@ -97,9 +103,7 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-
-        Product::find($id)->delete();
-        return redirect()->route('product.index');
-//        return view('admin.product.index');
+        User::find($id)->delete();
+        return redirect()->route('user.index');
     }
 }

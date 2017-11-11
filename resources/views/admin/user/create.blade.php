@@ -7,26 +7,26 @@
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.7 -->
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap.min.css">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../bower_components/font-awesome/css/font-awesome.min.css">
     <!-- Ionicons -->
-    <link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="../../bower_components/Ionicons/css/ionicons.min.css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="../../dist/css/AdminLTE.min.css">
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
-    <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
+    <link rel="stylesheet" href="../../dist/css/skins/_all-skins.min.css">
     <!-- Morris chart -->
-    <link rel="stylesheet" href="bower_components/morris.js/morris.css">
+    <link rel="stylesheet" href="../../bower_components/morris.js/morris.css">
     <!-- jvectormap -->
-    <link rel="stylesheet" href="bower_components/jvectormap/jquery-jvectormap.css">
+    <link rel="stylesheet" href="../../bower_components/jvectormap/jquery-jvectormap.css">
     <!-- Date Picker -->
-    <link rel="stylesheet" href="bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="../../bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
     <!-- Daterange picker -->
-    <link rel="stylesheet" href="bower_components/bootstrap-daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" href="../../bower_components/bootstrap-daterangepicker/daterangepicker.css">
     <!-- bootstrap wysihtml5 - text editor -->
-    <link rel="stylesheet" href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+    <link rel="stylesheet" href="../../plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -39,7 +39,16 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
-@yield('content')
+
+
+
+
+
+
+
+
+
+
 <div class="wrapper">
 
     <header class="main-header">
@@ -68,13 +77,13 @@
                     <!-- User Account: style can be found in dropdown.less -->
                     <li class="dropdown user user-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+                            <img src="../../dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
                             <span class="hidden-xs">Alexander Pierce</span>
                         </a>
                         <ul class="dropdown-menu">
                             <!-- User image -->
                             <li class="user-header">
-                                <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                                <img src="../../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                                 <p>
                                     Alexander Pierce - Web Developer
@@ -122,7 +131,7 @@
             <!-- Sidebar user panel -->
             <div class="user-panel">
                 <div class="pull-left image">
-                    <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                    <img src="../../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                 </div>
                 <div class="pull-left info">
                     <p>Alexander Pierce</p>
@@ -155,7 +164,8 @@
             </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="pages/charts/chartjs.html"><i class="fa fa-circle-o"></i> Посмотреть всех</a></li>
+                        <li><a href="/crud/public/admin/user/create"><i class="fa fa-circle-o"></i> Добавить пользователя</a></li>
+                        <li><a href="/crud/public/admin/user"><i class="fa fa-circle-o"></i> Посмотреть всех</a></li>
 
                     </ul>
                 </li>
@@ -168,7 +178,8 @@
             </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="pages/UI/general.html"><i class="fa fa-circle-o"></i> Посмотреть</a></li>
+                        <li><a href="/crud/public/admin/product/create"><i class="fa fa-circle-o"></i> Добавить товар</a></li>
+                        <li><a href="/crud/public/admin/product"><i class="fa fa-circle-o"></i> Посмотреть все</a></li>
 
                     </ul>
                 </li>
@@ -196,126 +207,38 @@
     </aside>
 
     <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
-        <div class="row">
-            <div class="col-sm-12">
-                <div style="margin: 30px">
-                    <h1>Товары</h1>
+    <div class="content-wrapper" style="padding-top: 50px">
+        <div class="container" style="padding-left: 50px">
+            <h1  style="padding-top: 30px; padding-left: 200px; font-family: Tahoma, Helvetica, Arial">Добавить пользователя</h1>
+            <div class="row">
 
-                    <table class="table">
-                        <thead>
-                        <tr>
-                            <td>ID</td>
-                            <td>Фото</td>
-                            <td>Категория</td>
-                            <td>Описание</td>
-                            <td>Цена</td>
-                            <td>Редактировать</td>
-                            <td>Дата создания</td>
-                            <td>Дата редактирования</td>
-                            <td>Перейти</td>
-                            <td>Удалить</td>
-                        </tr>
-                        </thead>
-                        <tbody>
-@foreach ($products as $product)
-                        <tr>
-                            <td><a href="products//view_product"><img src="http://localhost/crud/public/products_images/ " width="40px"></a></td>
-                            <td></td>
-                            <td><h4></h4></td>
-                            <td><h4></h4></td>
-                            <td><h4></h4></td>
+                <div class="form-group" style="padding-top: 30px; padding-left: 200px">
+                    <div class="col-sm-6">
+                        <form  action="{{ route('user.store') }}" method="post">
 
-                            <td>
-                                <a hidden href="products//update_product">
-                                    Редактировать
-                                </a>
-                            </td>
-                            <td><h4></h4></td>
+                            {{ csrf_field()  }}
+                            <p><input class="btn-file" type="file" name="image_url"></p>
+                            <p><input class="form-control"  type="text" placeholder="Имя" name="name"></p>
+                            <p><input class="form-control"  type="text" placeholder="Фамилия" name="lastname"></p>
+                            <p><input class="form-control" type="text" placeholder="Email" name="email"></p>
+                            <p><input class="form-control" type="text" placeholder="Телефон" name="phone"></p>
+                            <p><input class="form-control" type="password" placeholder="Пароль" name="password"></p>
 
+                            <button class="btn btn-primary" type="submit">Добавить</button>
 
-                            <td>
-                                <form hidden action="products//delete" method="POST">
-
-                                    <button class="btn btn-danger" type="submit" name="delete_product">Удалить</button>
-
-
-                                </form>
-                            </td>
-                        </tr>
-@endforeach
-                        </tbody>
-                    </table>
-
-
-                    <!-- Trigger the modal with a button -->
-                    <button  type="button" data-toggle="modal" data-target="#mymodal"
-                            class="btn btn-block btn-lg">
-                        Добавить
-                    </button>
-                    <!-- Modal -->
-
-
-                    <div class="modal fade" id="mymodal" role="dialog" aria-labelledby="myModalLabel"
-                         aria-hidden="true">
-
-                        <div class="modal-dialog">
-                            <!-- Modal content-->
-
-                            <div class="modal-content">
-
-                                <div class="modal-header">
-
-                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;
-                                    </button>
-                                    <h4 class="modal-title" id="myModalLabel">Добавить новый товар</h4>
-                                </div>
-                                <div class="modal-body">
-                                    <div style="margin-top: 20px" class="col-sm-6">
-
-
-                                        <form enctype="multipart/form-data" action="products/create" class="form-group"
-                                              method="post">
-
-                                            <p><input type="file" name="image" required></p>
-                                            <p><input minlength="2" maxlength="15" id="mw1" class="form-control" type="text" name="category" placeholder="Категория" required></p>
-                                            <p><input minlength="2" maxlength="15" id="mw1" class="form-control" type="text" name="description" placeholder="Описание" required></p>
-                                            <p><input minlength="2" maxlength="15" id="mw1" class="form-control" type="text" name="price" placeholder="Цена" required></p>
-
-
-
-                                            <button id="mw1" class="btn btn-primary" type="submit">Добавить</button>
-                                            <button id="mw1" type="button" class="btn btn-default" data-dismiss="modal">
-                                                Отмена
-                                            </button>
-
-                                        </form>
-
-                                    </div>
-                                    <div class="modal-footer">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        </form>
                     </div>
-
-                    <script>
-                        $(document).ready(function () {
-                            $("#mybtn").click(function () {
-                                $("#mymodal").modal();
-                            });
-                        });
-                    </script>
-
                 </div>
+
             </div>
+
         </div>
-
-        <!-- Main content -->
-
-        <!-- /.content -->
     </div>
+
+    <!-- Main content -->
+
+    <!-- /.content -->
+
     <!-- /.content-wrapper -->
     <footer class="main-footer">
         <div class="pull-right hidden-xs">
@@ -522,41 +445,43 @@
 <!-- ./wrapper -->
 
 <!-- jQuery 3 -->
-<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../../bower_components/jquery/dist/jquery.min.js"></script>
 <!-- jQuery UI 1.11.4 -->
-<script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
+<script src="../../bower_components/jquery-ui/jquery-ui.min.js"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
     $.widget.bridge('uibutton', $.ui.button);
 </script>
 <!-- Bootstrap 3.3.7 -->
-<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- Morris.js charts -->
-<script src="bower_components/raphael/raphael.min.js"></script>
-<script src="bower_components/morris.js/morris.min.js"></script>
+<script src="../../bower_components/raphael/raphael.min.js"></script>
+<script src="../../bower_components/morris.js/morris.min.js"></script>
 <!-- Sparkline -->
-<script src="bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
+<script src="../../bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
 <!-- jvectormap -->
-<script src="plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
-<script src="plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+<script src="../../plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+<script src="../../plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
 <!-- jQuery Knob Chart -->
-<script src="bower_components/jquery-knob/dist/jquery.knob.min.js"></script>
+<script src="../../bower_components/jquery-knob/dist/jquery.knob.min.js"></script>
 <!-- daterangepicker -->
-<script src="bower_components/moment/min/moment.min.js"></script>
-<script src="bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+<script src="../../bower_components/moment/min/moment.min.js"></script>
+<script src="../../bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
 <!-- datepicker -->
-<script src="bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+<script src="../../bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
 <!-- Bootstrap WYSIHTML5 -->
-<script src="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+<script src="../../plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
 <!-- Slimscroll -->
-<script src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<script src="../../bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
 <!-- FastClick -->
-<script src="bower_components/fastclick/lib/fastclick.js"></script>
+<script src="../../bower_components/fastclick/lib/fastclick.js"></script>
 <!-- AdminLTE App -->
-<script src="dist/js/adminlte.min.js"></script>
+<script src="../../dist/js/adminlte.min.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="dist/js/pages/dashboard.js"></script>
+<script src="../../dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="dist/js/demo.js"></script>
+<script src="../../dist/js/demo.js"></script>
 </body>
 </html>
+
+
