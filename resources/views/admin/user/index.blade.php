@@ -211,7 +211,7 @@
         <div class="container">
             <h1>Пользователи</h1>
             <div class="row" >
-                <table class="table table-bordered" style="width: 65%">
+                <table class="table table-bordered" style="max-width: 65%">
                     <thead>
                     <tr >
                         <td>№</td>
@@ -231,7 +231,7 @@
                     @foreach($users as $user)
                         <tr>
                             <td><h4>{{ $user->id }}</h4></td>
-                            <td><h4>{{ $user->image_url }}</h4></td>
+                            <td><h4><img src="../../public/user_images/{{ $user->image_url }}" width="30px"></h4></td>
                             <td><h4>{{ $user->name }}</h4></td>
                             <td><h4>{{ $user->lastname }}</h4></td>
                             <td><h4>{{ $user->email }}</h4></td>

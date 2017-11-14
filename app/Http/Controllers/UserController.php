@@ -12,6 +12,11 @@ class UserController extends Controller
 
 
 
+
+
+
+
+
     /**
      * Display a listing of the resource.
      *
@@ -32,6 +37,8 @@ class UserController extends Controller
     {
 
 
+
+
         return view('admin.user.create');
     }
 
@@ -44,6 +51,11 @@ class UserController extends Controller
     public function store(Request $request)
     {
 
+        $path = $request->image_url->store('user_images');
+
+//        $file = $request->file('image_url');
+//        $name = $file->getClientOriginalName();
+//        $file->move('user_images', $name);
 
 
         $user = new User($request->all());

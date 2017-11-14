@@ -18,6 +18,10 @@ class ProductController extends Controller
      */
     public function index()
     {
+
+
+
+
         $products = Product::all();
         return view('admin.product.index', compact('products'));
     }
@@ -30,7 +34,7 @@ class ProductController extends Controller
     public function create()
     {
 
-        return view('admin.product.create');
+      return view('admin.product.create');
 
     }
 
@@ -42,8 +46,24 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+
+        $path = $request->image_url->store('product_images');
+
+//        $path = $request->photo->store('images', 's3');
+
+//            $file = $request->file('image_url');
+//            $name = $file->getClientOriginalName();
+//            $file->move('product_images', $name);
+
+
+
+
         $product = new Product($request->all());
         $product->save();
+
+
+
+
         return redirect()->route('product.index');
     }
 

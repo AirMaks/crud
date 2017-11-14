@@ -1,11 +1,5 @@
 
 
-
-
-
-
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -116,10 +110,10 @@
                             <!-- Menu Footer-->
                             <li class="user-footer">
                                 <div class="pull-left">
-                                    <a href="#" class="btn btn-default btn-flat">Profile</a>
+                                    <a href="/crud/public/admin/product/admin_profile" class="btn btn-default btn-flat">Profile</a>
                                 </div>
                                 <div class="pull-right">
-                                    <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                                    <a href="" class="btn btn-default btn-flat">Sign out</a>
                                 </div>
                             </li>
                         </ul>
@@ -227,7 +221,6 @@
                         <td>Название</td>
                         <td>Описание</td>
                         <td>Цена</td>
-                        <td>Картинка</td>
                         <td>Дата создания</td>
                         <td>Дата редактирования</td>
                         <td>Перейти</td>
@@ -239,12 +232,10 @@
                     @foreach($products as $product)
                     <tr>
                         <td><h4>{{ $product->id }}</h4></td>
-                        <td><h4>{{ $product->image_url }}</h4></td>
+                        <td><h4><img src={{ asset('../storage/app/product_images/ahFIrBsf8353cDMOWats1TW1x2Ybr6rzjUUkw5oj.jpeg' ) }} width="30px"></h4></td>
                         <td><h4>{{ $product->title }}</h4></td>
                         <td><h4>{{ $product->description }}</h4></td>
                         <td><h4>{{ $product->price }}</h4></td>
-                        <td>{{ $product->image_url }}</td>
-
                         <td><h4>{{ $product->created_at}}</h4></td>
                         <td><h4>{{ $product->updated_at }}</h4></td>
                         <td>

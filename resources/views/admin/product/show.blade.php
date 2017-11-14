@@ -229,7 +229,7 @@
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
 
-                        {{ $product->image_url}}
+                        <img src={{asset('../storage/app/product_images/ISYoq7TCTa3yi4d3SaQWFzZ8i5SRhFCDH2bmM7ZD.jpeg') }} width="400px">
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12">

@@ -214,7 +214,7 @@
 
                 <div class="form-group" style="padding-top: 30px; padding-left: 200px">
                     <div class="col-sm-6">
-                        <form  action="{{ route('user.store') }}" method="post">
+                        <form enctype="multipart/form-data" action="{{ route('user.store') }}" method="post">
 
                             {{ csrf_field()  }}
                             <p><input class="btn-file" type="file" name="image_url"></p>

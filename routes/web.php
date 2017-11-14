@@ -41,9 +41,13 @@ Route::group(['prefix'=> '/admin', ], function(){
 
     Route::get('/', 'Admin\AdminController@index')->name('admin');
 
+
+
     Route::resource('product', 'ProductController');
 
     Route::resource('user', 'UserController');
+
+
 
 
 
